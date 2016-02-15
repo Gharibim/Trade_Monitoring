@@ -1,0 +1,5 @@
+C:\Users\ashok\onedrive\documents\visual studio 2010\Projects\StockMonitoringService\StockMonitoringService\bin\StockMonitoringService.dll
+C:\Users\ashok\onedrive\documents\visual studio 2010\Projects\StockMonitoringService\StockMonitoringService\bin\StockMonitoringService.pdb
+C:\Users\ashok\onedrive\documents\visual studio 2010\Projects\StockMonitoringService\StockMonitoringService\obj\Debug\StockMonitoringService.csprojResolveAssemblyReference.cache
+C:\Users\ashok\onedrive\documents\visual studio 2010\Projects\StockMonitoringService\StockMonitoringService\obj\Debug\StockMonitoringService.dll
+C:\Users\ashok\onedrive\documents\visual studio 2010\Projects\StockMonitoringService\StockMonitoringService\obj\Debug\StockMonitoringService.pdb

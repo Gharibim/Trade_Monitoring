@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8b57ef08-217e-4fa5-8dc4-53a9a79efea8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://www.tradeservice.somee.com/Service1.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Service1.xsd" MetadataType="Schema" ID="4b32089d-c254-43a1-98a1-4969afa7b18c" SourceId="1" SourceUrl="http://www.tradeservice.somee.com/Service1.svc?xsd=xsd1" />
+    <MetadataFile FileName="Service1.wsdl" MetadataType="Wsdl" ID="c278ae66-1042-4519-bb20-5a60e6ecec3a" SourceId="1" SourceUrl="http://www.tradeservice.somee.com/Service1.svc?wsdl" />
+    <MetadataFile FileName="Service11.xsd" MetadataType="Schema" ID="e0452c80-22a3-41b4-97d3-2d2c9e80c6ce" SourceId="1" SourceUrl="http://www.tradeservice.somee.com/Service1.svc?xsd=xsd3" />
+    <MetadataFile FileName="Service12.xsd" MetadataType="Schema" ID="6d313d1e-16e4-485f-8ebb-63b12c154cba" SourceId="1" SourceUrl="http://www.tradeservice.somee.com/Service1.svc?xsd=xsd2" />
+    <MetadataFile FileName="Service1.disco" MetadataType="Disco" ID="c65895fb-e9c2-49a2-895a-f59a61229a6b" SourceId="1" SourceUrl="http://www.tradeservice.somee.com/Service1.svc?disco" />
+    <MetadataFile FileName="Service13.xsd" MetadataType="Schema" ID="3332fd8c-6d7c-4cb3-97d6-6c535eec263b" SourceId="1" SourceUrl="http://www.tradeservice.somee.com/Service1.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,151 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="UserMaster.master.cs" Inherits="UserMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Trade Marketing</title> 
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<!--
+Template 2033 Business
+http://www.tooplate.com/view/2033-business
+-->
+<link href="tooplate_style.css" rel="stylesheet" type="text/css" />
+
+    <style type="text/css">
+        .style1
+        {
+            color: #CC6600;
+            font-size: xx-large;
+            font-family: "Times New Roman", Times, serif;
+        }
+        .style2
+        {
+            font-family: "Times New Roman", Times, serif;
+            color: #0066FF;
+        }
+        .style3
+        {
+            font-family: "Times New Roman", Times, serif;
+        }
+        .style4
+        {
+            font-family: "Times New Roman", Times, serif;
+            color: #CC66FF;
+            font-size: large;
+            font-weight: normal;
+        }
+        .style5
+        {
+            font-size: medium;
+        }
+    </style>
+
+</head>
+<body> 
+
+<div id="tooplate_header_wrapper">
+
+    <div id="tooplate_header">
+    
+        <div id="site_title">
+      
+        
+        	<%--<h1><a href="#"><img src="images/tooplate_logo.png" alt="business template" /><span>Free HTML Template</span></a></h1>--%>
+        
+            <span class="style1"><strong>TRADE MONITORING<br />
+            </strong></span>
+            <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="style2">&nbsp; .... A Place for Marketing and Innovation</span></div> <!-- end of site_title -->
+        
+        <div id="header_phone_no">
+
+			Toll Free : <span class="style4"><strong>05 713 091 416 </strong></span>
+        
+        </div>
+        
+        <div class="cleaner_h10"></div>
+        
+        <div id="tooplate_menu">
+        	
+            <div id="home_menu"><a href="#"></a></div>
+                
+            <ul>
+                <li class="style3"><a href="UserHome.aspx" class="current">Home</a></li>
+                <li class="style3"><a href="Portfolio.aspx">Portfolio</a></li>
+                <li class="style3"><a href="MarketWatch.aspx">Market Watch</a></li>
+                <li class="style3"><a href="NewOrder.aspx">New Order</a></li>
+               
+                <li class="style3"><a href="OrderHistory.aspx">Order History</a></li>
+                <li class="style3"><a href="Logout.aspx">Signout</a></li>
+            </ul>    	
+        
+        </div> <!-- end of tooplate_menu -->
+        
+    </div>	  
+</div> <!-- end of header_wrapper -->
+
+
+
+<div id="tooplate_main">
+    
+    <div id="tooplate_content">
+    
+        
+         <asp:ContentPlaceHolder id="Middle" runat="server">
+        
+        </asp:ContentPlaceHolder>           
+                  
+        
+    </div>
+    
+        <div id="tooplate_sidebar">
+        
+            <h2 class="style3">Our Services</h2>
+            
+            <ul class="tooplate_list">
+            <li><a href="Reports.aspx">Reports</a></li>
+           
+            <li><a href="UMobile.aspx">Mobile Trading</a></li>
+            <li><a href="CashBox.aspx">Cash Box</a></li>
+             <li><a href="appointment.aspx">Make Appointment</a></li>
+            <li><a href="AppointmentDetails.aspx">Appointment Details</a></li>
+            
+            </ul>
+           
+            
+         
+            
+            <h2 class="style5">Personal Information</h2>
+            <ul class="tooplate_list">
+           <li><a href="UserProfile.aspx">Profile Details</a></li>
+            <li><a href="UpdateProfile.aspx">Update Profile</a></li>
+            <li><a href="Id.aspx">Membership ID</a></li>
+            <li><a href="ChangePassword.aspx">Change Password</a></li>
+            <li><a href="UContact.aspx">Contact Us</a></li>
+            </ul>
+            
+        
+        
+        
+        </div>
+        
+</div>
+
+    <div class="cleaner"></div>  
+
+<div id="tooplate_footer_wrapper">
+
+     <div id="tooplate_footer">
+    
+        Copyright © 2015 Trade Monitoring&nbsp;@ &nbsp;&nbsp<a href="http://www.trademonitoring.somee.com">trademonitoring.somee.com</a>
+    
+    </div> <!-- end of tooplate_footer -->
+
+</div> 
+    
+</body>
+</html>

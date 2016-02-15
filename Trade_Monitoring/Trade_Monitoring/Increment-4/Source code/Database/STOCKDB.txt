@@ -1,0 +1,536 @@
+create table CustomersDetails
+(
+memshipid int primary key identity(10000,1), 
+fname varchar(50),
+lname varchar(50),
+username varchar(50),
+password varchar(20),
+email varchar(50),
+phone varchar(50),
+jdate datetime,
+years varchar(20),
+amount varchar(100))
+
+........................................................................................................1
+create  procedure sp_regmembers
+(@fname varchar(50),
+@lname varchar(50),
+@username varchar(50),
+@password varchar(20),
+@email varchar(50),
+@phone varchar(50),
+@jdate datetime,
+@years varchar(20),
+@amount varchar(100),
+@memshipid int output)
+as
+begin
+insert into CustomersDetails values(@fname,@lname,@username,@password,@email,@phone,@jdate,@years,@amount)
+SET @memshipid=SCOPE_IDENTITY()
+RETURN @memshipid
+end
+
+...........................................................................................................2
+
+create procedure sp_username
+as
+begin
+select username from CustomersDetails
+end
+
+............................................................................................................3
+
+
+
+create procedure sp_userdetails
+(@username varchar(50))
+as
+begin
+select username,password from CustomersDetails where username=@username;
+end
+
+............................................................................................................4
+
+create procedure sp_emailaddress
+(@memshipid varchar(20))
+as
+begin
+select memshipid,email,password from CustomersDetails where memshipid=@memshipid
+end
+
+............................................................................................................5
+
+create procedure sp_profile
+(@username varchar(20))
+as 
+begin
+select memshipid,fname,lname,username,email,phone,jdate from CustomersDetails where username=@username
+end
+
+.............................................................................................................6
+
+create table employeeimage
+(id varchar(20),
+img image,
+date1 datetime)
+
+..............................................................................................................7
+
+alter procedure prcInsert
+(@id varchar(20),
+@photo image,
+@date1 datetime)
+as 
+begin
+insert into employeeimage values(@id,@photo,@date1)
+delete employeeimage where id=@id and date1<@date1
+end
+
+..............................................................................................................8
+
+
+
+ create table stockdata
+ (Symbol varchar(20), 
+ Name varchar(20),
+  Bid varchar(20), 
+  Ask varchar(20),
+  Open1 varchar(20),
+  PreviousClose varchar(20),
+  Last1 varchar(20),
+  date1 datetime)
+  
+ ...............................................................................................................9
+
+  
+  alter procedure sp_memshipdetails
+  (@username varchar(20))
+  as
+  begin
+  select fname,lname,memshipid,phone from CustomersDetails where username=@username
+  end
+  
+..............................................................................................................10
+
+
+ alter procedure sp_stockdata
+  (@Symbol varchar(20), 
+   @Name varchar(20),
+  @Bid varchar(20), 
+  @Ask varchar(20),
+  @Open varchar(20),
+  @PreviousClose varchar(20),
+  @Last varchar(20),
+  @date1 datetime)
+  as
+  begin
+  insert into stockdata values(@Symbol, @Name, @Bid, @Ask, @Open, @PreviousClose, @Last,@date1)
+  delete stockdata where Symbol=@Symbol and date1<@date1
+  end
+
+....................................................................................................................11
+
+create table sharesdetails
+(symbol  varchar(10),
+companyname varchar(50),
+shares varchar(10),
+shareprice varchar(20))
+
+...................................................................................................................12
+
+
+insert into sharesdetails values('AAPL','APPLE COMPUTER INC','66','111.87')
+insert into sharesdetails values('ACH','ALUMINUM CP CHIN ADS','120','9.18')
+insert into sharesdetails values('BAB','BRITISH AIRWAYS PLC','56','29.32')
+insert into sharesdetails values('DAL','DELTA AIR LINES INC','124','49.08')
+insert into sharesdetails values('DWSN','DAWSON GEOPHYSICAL COMPANY','150','3.92')
+insert into sharesdetails values('EXPE','EXPEDIA INC','34','133.90')
+insert into sharesdetails values('FCF','FIRST COMMONWLTH FINANCIAL','43','9.18')
+insert into sharesdetails values('GYRO','GYRODYNE COMPANY OF AMERICA IN','68','149.49')
+insert into sharesdetails values('HFWA','HERITAGE FINANCIAL CORPORATION','72','18.98')
+insert into sharesdetails values('INFY','INFOSYS TECHNOLOGIES LIMITED','90','17.50')
+insert into sharesdetails values('LAKE','LAKELAND INDUSTRIES INC','123','15.58')
+insert into sharesdetails values('NATI','NATIONAL INSTRUMENTS CORPORATI','205','28.45')
+insert into sharesdetails values('OFC','CORP OFFICE PPTY TR','78','22.20')
+insert into sharesdetails values('PCTY','PARTY CITY CORPORATION','93','32.66')
+insert into sharesdetails values('SAND','SANDATA TECHNOLOGIES INC','124','3.08')
+insert into sharesdetails values('VTA','VESTA INSURANCE GRP','127','10.69')
+insert into sharesdetails values('WPPGY','WPP GROUP PLC - AMER DEP SHRS','89','110.22')
+insert into sharesdetails values('XLY','HEALTHCARE SS SPDR F','78','69.33')
+insert into sharesdetails values('YHOO','YAHOO! INC','268','33.64')
+insert into sharesdetails values('YUM','YUM BRANDS INC','44','72.10')
+
+..............................................................................................................13
+
+create table cashbox
+(username varchar(20),
+amount float,
+tdate datetime)
+
+.............................................................................................................14
+
+alter procedure sp_CashBox
+(@username varchar(20),
+@amount float,
+@tdate datetime)
+as
+begin
+insert into cashbox values(@username,@amount,@tdate)
+end
+
+............................................................................................................15
+
+alter procedure sp_CashBoxAmount
+(@username varchar(20))
+as
+begin
+select SUM(amount) as tamount from cashbox where username=@username
+end
+
+..............................................................................................................16
+
+insert into sharesdetails values('AAPL','APPLE COMPUTER INC','66','111.87')
+insert into sharesdetails values('ACH','ALUMINUM CP CHIN ADS','120','9.18')
+insert into sharesdetails values('BAB','BRITISH AIRWAYS PLC','56','29.32')
+insert into sharesdetails values('DAL','DELTA AIR LINES INC','124','49.08')
+insert into sharesdetails values('DWSN','DAWSON GEOPHYSICAL COMPANY','150','3.92')
+insert into sharesdetails values('EXPE','EXPEDIA INC','34','133.90')
+insert into sharesdetails values('FCF','FIRST COMMONWLTH FINANCIAL','43','9.18')
+insert into sharesdetails values('GYRO','GYRODYNE COMPANY OF AMERICA IN','68','149.49')
+insert into sharesdetails values('HFWA','HERITAGE FINANCIAL CORPORATION','72','18.98')
+insert into sharesdetails values('INFY','INFOSYS TECHNOLOGIES LIMITED','90','17.50')
+insert into sharesdetails values('LAKE','LAKELAND INDUSTRIES INC','123','15.58')
+insert into sharesdetails values('NATI','NATIONAL INSTRUMENTS CORPORATI','205','28.45')
+insert into sharesdetails values('OFC','CORP OFFICE PPTY TR','78','22.20')
+insert into sharesdetails values('PCTY','PARTY CITY CORPORATION','93','32.66')
+insert into sharesdetails values('SAND','SANDATA TECHNOLOGIES INC','124','3.08')
+insert into sharesdetails values('VTA','VESTA INSURANCE GRP','127','10.69')
+insert into sharesdetails values('WPPGY','WPP GROUP PLC - AMER DEP SHRS','89','110.22')
+insert into sharesdetails values('XLY','HEALTHCARE SS SPDR F','78','69.33')
+insert into sharesdetails values('YHOO','YAHOO! INC','268','33.64')
+insert into sharesdetails values('YUM','YUM BRANDS INC','44','72.10')
+
+.............................................................................................................17
+
+create procedure sp_GetShareInformation
+(@symbol varchar(20))
+as
+begin
+select s.Open1,sp.shares from stockdata s,sharesdetails sp
+where s.Symbol=sp.symbol and s.Symbol=@symbol
+end
+
+............................................................................................................18
+
+
+create table userclosedstock
+(username varchar(20),
+symbol varchar(20),
+quantity float,
+price float,
+status varchar(20),
+odate varchar(50))
+
+.............................................................................................................19
+
+
+alter procedure sp_stockcloseddata
+(@username varchar(20),
+@symbol varchar(20),
+@quantity float,
+@price float,
+@status varchar(20),
+@odate varchar(50),
+@rshares varchar(20))
+as
+begin
+insert into userclosedstock values(@username,@symbol, @quantity, @price, @status,@odate)
+update sharesdetails set shares=@rshares where symbol=@symbol
+end
+
+..........................................................................................................20
+
+create table useropenstockdata
+(orderid int primary key identity(90000,1),
+username varchar(20),
+ symbol varchar(20),
+ quantity float,
+ price varchar(20),
+ fromprice float,
+ toprice float,
+ status varchar(20),
+ orderdate datetime,
+ rdate datetime)
+ 
+.........................................................................................................21
+
+ alter procedure sp_stockopendata
+ (@username varchar(20),
+ @symbol varchar(20),
+ @quantity float,
+ @price varchar(20),
+ @from float,
+ @to float,
+ @status varchar(20),
+ @orderdate datetime,
+ @rdate datetime,
+ @orderid int output)
+ as
+ begin
+ insert into useropenstockdata values(@username, @symbol, @quantity,@price, @from, @to, @status,@orderdate,@rdate)
+ SET @orderid=SCOPE_IDENTITY()
+RETURN @orderid
+ end
+...............................................................................................................22
+ 
+ alter procedure sp_portfolio
+ (@username varchar(20))
+ as
+ begin
+ select u.odate,u.symbol,u.quantity,u.price,s.Open1 as marketprice,u.quantity*u.price as avgcost,u.quantity*s.Open1 as marketcost,(u.quantity*s.Open1)-(u.quantity*u.price) as Profitloss from userclosedstock u,stockdata s where u.symbol=s.Symbol and u.username=@username and u.quantity>0 order by symbol
+ end
+
+.................................................................................................................................23
+
+create procedure sp_sumstock
+(@username varchar(20))
+as 
+begin
+
+select SUM(u.price*u.quantity) as totuserprice,SUM(s.Open1*u.quantity) as totmarketprice from userclosedstock u, stockdata s where u.symbol=s.Symbol and u.username=@username
+end
+
+...............................................................................................................................24
+
+alter procedure sp_closedorderhistory
+ (@username varchar(20))
+ as
+ begin
+ select odate as OrderDate,symbol as Symbol,quantity as Quantity, price as Price, status as Status from userclosedstock where username=@username
+ end
+
+.....................................................................................................................................25 
+ alter procedure sp_openorderhistory
+ (@username varchar(20))
+ as
+ begin
+ select orderid as OrderID, orderdate as OrderDate,rdate as TillDate,symbol as Symbol,quantity as Quantity, price as Price,fromprice as FromPrice,toprice as ToPrice,status as Status from useropenstockdata where username=@username and status='open'
+ end
+
+...............................................................................................................................26 
+  alter procedure sp_failedorderhistory
+ (@username varchar(20))
+ as
+ begin
+ select orderid as OrderID,orderdate as OrderDate,rdate as TillDate,symbol as Symbol,quantity as Quantity, price as Price,fromprice as FromPrice,toprice as ToPrice,status as Status from useropenstockdata where username=@username and status='failed'
+ end
+
+.....................................................................................................................................27
+
+alter procedure sp_getopenstocdata
+ (@username varchar(20))
+ as
+ begin
+ select u.orderid, u.symbol,u.quantity,u.fromprice,u.toprice,u.orderdate,u.rdate,s.Open1,sh.shares from useropenstockdata u,stockdata s,sharesdetails sh where u.symbol=s.Symbol and u.symbol=sh.symbol and u.status='open' and u.username=@username
+ end
+
+...................................................................................................................................28
+
+alter procedure sp_holdstocktoclose
+ (@orderid int,
+ @username varchar(20),
+@symbol varchar(20),
+@quantity float,
+@price float,
+@status varchar(20),
+@odate datetime,
+@rshares varchar(20))
+as
+begin
+insert into userclosedstock values(@username,@symbol, @quantity, @price, @status,@odate)
+update sharesdetails set shares=@rshares where symbol=@symbol
+update useropenstockdata set status=@status where orderid=@orderid
+end
+
+......................................................................................................................................29
+
+
+create procedure sp_updateholdstatus
+(@orderid int,
+@status varchar(20))
+as
+begin
+update useropenstockdata set status=@status where orderid=@orderid
+end
+
+................................................................................................................................30
+
+create procedure sp_changepassworddet
+(@username varchar(20))
+as
+begin
+select memshipid,password from CustomersDetails where username=@username
+end
+
+..............................................................................................................................31
+
+create procedure sp_updatepassword
+(@username varchar(20),
+@newpassword varchar(20))
+as
+begin
+update CustomersDetails set password=@newpassword where username=@username
+end
+
+----------------------------------------------------------------------------------------------------------------------------32
+
+alter procedure sp_updateprofile
+(@username varchar(20),
+@email varchar(50),
+@phone varchar(20))
+as
+begin
+update CustomersDetails set email=@email,phone=@phone where username=@username
+end
+
+----------------------------------------------------------------------------------------------------------------------------33
+
+create procedure sp_ashares
+(@symbol varchar(20))
+as
+begin
+select shares from sharesdetails where symbol=@symbol
+end
+
+............................................................................................................................34
+
+create table sellstockdata
+(username varchar(20),
+ symbol varchar(20),
+ sellingprice float,
+ sellquantity varchar(20),
+ tdate datetime,
+ odate varchar(50))
+
+...........................................................................................................................35
+
+alter procedure sp_sellstockdata
+ (@username varchar(20),
+  @orderdate varchar(50), 
+  @symbol varchar(20),
+  @marketprice float,
+  @sellquantity varchar(20),
+  @totalshares varchar(20),
+  @rshares float,
+  @tdate varchar(20))
+  as
+  begin
+  insert into sellstockdata values(@username,@symbol,@marketprice,@sellquantity,@tdate,@orderdate)
+  update sharesdetails set shares=@totalshares where symbol=@symbol
+  update userclosedstock set quantity=@rshares where username=@username and symbol=@symbol and odate=@orderdate
+  end
+
+............................................................................................................................36
+
+create procedure sp_GetEmail
+(@username varchar(20))
+as 
+begin
+select email from CustomersDetails where username=@username
+end
+
+.........................................................................................................................37
+
+
+create table appointment
+(appointmentid int primary key identity(500,1), 
+username varchar(20),
+slottime varchar(30),
+slotdate varchar(30))
+
+............................................................................................................................38
+
+
+alter procedure sp_BookAppointment
+(@username varchar(20),
+@slottime varchar(30),
+@slotdate varchar(30),
+@appointmentid int output)
+as
+begin
+insert into appointment values(@username,@slottime,@slotdate)
+SET @appointmentid=SCOPE_IDENTITY()
+RETURN @appointmentid
+end
+
+...........................................................................................................................39
+
+alter procedure sp_GetAppointmentDetails
+(@slotdate varchar(20))
+as
+begin
+select slottime,slotdate from appointment where slotdate=@slotdate
+end
+
+..........................................................................................................................40
+
+alter procedure sp_GetAppointment
+(@username varchar(20))
+as
+begin
+select appointmentid,slotdate,slottime from appointment where username=@username and slotdate>DATEADD(DD, DATEDIFF(DY, 0, GETDATE()), -1)order by slotdate
+end
+
+..........................................................................................................................................................41
+
+alter procedure sp_CancelAppointment
+(@appointmentid int)
+as
+begin
+delete appointment where appointmentid=@appointmentid
+end
+
+.....................................................................................................................................................42
+
+
+create procedure sp_AvailableSharesStatistics
+as
+begin
+select symbol,shares from sharesdetails
+end
+
+......................................................................................................................................................43
+
+
+alter procedure sp_BuySharesStatistics
+(@username varchar(50))
+as
+begin
+select symbol,SUM(quantity) as quantity from userclosedstock where username=@username group by symbol 
+end
+
+.....................................................................................................................................................44
+
+alter procedure sp_SellSharesStatistics
+(@username varchar(50))
+as
+begin
+select symbol,SUM(CONVERT(int,sellquantity))as quantity from sellstockdata where username=@username group by symbol
+end
+
+....................................................................................................................................................45
+
+alter procedure sp_SharesStatistics
+(@username varchar(50))
+as
+begin
+
+select SUM(CONVERT(int,s.shares)) from sharesdetails s
+
+select SUM(CONVERT(int,u.quantity)) from userclosedstock u where username=@username
+
+select SUM(CONVERT(int,st.sellquantity)) from sellstockdata st where username=@username
+
+end
+
+---------------------------------------------------------------------------------------------------------------------------------------------------46

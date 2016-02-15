@@ -1,0 +1,5 @@
+E:\VS 2010 Projects\ConvertTextToSpeech\ConvertTextToSpeech\bin\ConvertTextToSpeech.dll
+E:\VS 2010 Projects\ConvertTextToSpeech\ConvertTextToSpeech\bin\ConvertTextToSpeech.pdb
+E:\VS 2010 Projects\ConvertTextToSpeech\ConvertTextToSpeech\obj\Debug\ConvertTextToSpeech.dll
+E:\VS 2010 Projects\ConvertTextToSpeech\ConvertTextToSpeech\obj\Debug\ConvertTextToSpeech.pdb
+E:\VS 2010 Projects\ConvertTextToSpeech\ConvertTextToSpeech\obj\Debug\ConvertTextToSpeech.csprojResolveAssemblyReference.cache
